@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XV Años - Daniela</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- Fuente manuscrita -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fff7fa 0%, #f7e9d7 100%);
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="40" r="2" fill="gold" opacity="0.3"/><circle cx="80" cy="120" r="1.5" fill="pink" opacity="0.25"/><circle cx="200" cy="80" r="2.5" fill="white" opacity="0.2"/><circle cx="300" cy="200" r="1.8" fill="gold" opacity="0.25"/><circle cx="400" cy="100" r="2" fill="pink" opacity="0.2"/><circle cx="600" cy="300" r="2.5" fill="white" opacity="0.18"/><circle cx="700" cy="150" r="1.5" fill="gold" opacity="0.22"/><circle cx="900" cy="250" r="2" fill="pink" opacity="0.18"/></svg>');
+      background-repeat: repeat;
+      background-size: 400px 400px;
+      animation: starsMove 60s linear infinite;
+    }
+    @keyframes starsMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 400px 400px; }
+    }
+    .script {
+      font-family: 'Great Vibes', cursive;
+    }
+    .title-gradient {
+      background: linear-gradient(45deg, #b76e79, #d4af37, #f7c59f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      animation: sparkle 3s infinite;
+    }
+    @keyframes sparkle {
+      0% { transform: scale(0) translateY(0); opacity: 1; }
+      50% { transform: scale(1.5) translateY(-30px); opacity: 0.5; }
+      100% { transform: scale(0) translateY(0); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="relative overflow-x-hidden">
+
+  <!-- Brillitos -->
+  <div id="sparkles"></div>
+
+  <main class="max-w-3xl mx-auto px-6 py-12 text-center">
+    <h1 class="text-6xl md:text-7xl font-bold script title-gradient drop-shadow-lg animate__animated animate__fadeInDown">
+      Mis XV Años
+    </h1>
+
+    <h2 class="text-4xl md:text-5xl script text-gray-800 mt-4 animate__animated animate__zoomIn animate__delay-1s italic">
+      Daniela Estefanía López Pizarro
+    </h2>
+
+    <p class="mt-6 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto animate__animated animate__fadeIn animate__delay-2s italic">
+      Con gran alegría te invito a celebrar conmigo una noche mágica llena de sueños ✨
+    </p>
+
+    <div class="bg-white/70 backdrop-blur-md rounded-2xl shadow-2xl p-8 mt-10 animate__animated animate__fadeInUp animate__delay-3s">
+      <h3 class="text-2xl script text-pink-800 mb-3">Ceremonia Religiosa</h3>
+      <p class="text-gray-800 italic">
+        📍 Capilla: Colorines 29, La Floresta del Colli, Colinas de la Primavera, 45066 Zapopan, Jal.
+      </p>
+      <p class="mt-3 text-gray-800">
+        ⏰ Hora: 6:00 PM
+      </p>
+      <a href="https://www.google.com/maps/place/Colorines+29,+La+Floresta+del+Colli,+Colinas+de+la+Primavera,+45066+Zapopan,+Jal./" target="_blank"
+        class="mt-4 inline-block bg-pink-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-pink-700 transition duration-300 animate__animated animate__pulse animate__infinite">
+        📍 Ver en Google Maps
+      </a>
+
+      <h3 class="text-2xl script text-pink-800 mt-10 mb-3">Recepción</h3>
+      <p class="text-gray-800 italic">
+        📍 Casino: Obreros Unificados 47c, El Rehilete, Colinas de la Primavera, 45068 Zapopan, Jal.
+      </p>
+      <p class="mt-3 text-gray-800">
+        ⏰ Hora: 8:00 PM
+      </p>
+      <a href="https://www.google.com/maps/place/Obreros+Unificados+47c,+El+Rehilete,+Colinas+de+la+Primavera,+45068+Zapopan,+Jal./" target="_blank"
+        class="mt-4 inline-block bg-pink-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-pink-700 transition duration-300 animate__animated animate__pulse animate__infinite">
+        📍 Ver en Google Maps
+      </a>
+    </div>
+  </main>
+
+  <script>
+    // Generador de brillitos ✨
+    const sparklesContainer = document.getElementById('sparkles');
+    for (let i = 0; i < 25; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left = Math.random() * 100 + 'vw';
+      sparkle.style.top = Math.random() * 100 + 'vh';
+      sparkle.style.animationDelay = Math.random() * 5 + 's';
+      sparklesContainer.appendChild(sparkle);
+    }
+  </script>
+
+</body>
+</html>
