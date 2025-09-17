@@ -60,12 +60,12 @@
 
   <main class="max-w-3xl mx-auto px-6 py-12 text-center relative z-10">
     <h1 class="text-6xl md:text-7xl font-bold script mb-2 animate__animated animate__fadeInDown"
-        style="color: #ffffff; text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);">
+        style="color: #ffffff; text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.178);">
       Mis XV Años
     </h1>
 
     <h2 class="text-5xl md:text-6xl script text-gray-800 mt-4 animate__animated animate__zoomIn animate__delay-1s italic font-bold"
-    style="color: #000000; text-shadow: 1px 2px 8px rgba(255, 255, 255, 0.582);">
+    style="color: #000000; text-shadow: 1px 2px 8px rgba(255, 255, 255, 0.219);">
       Daniela Estefanía
     </h2>
 
@@ -84,7 +84,7 @@
         📍 Ver en Google Maps
       </a>
 
-      <h3 class="text-3xl script text-pink-800 mt-10 mb-3">Evento</h3>
+      <h3 class="text-2xl script text-pink-800 mt-10 mb-3">Evento</h3>
       <p class="text-gray-800 italic">
         📍 Ubicación: Obreros Unificados 47c, El Rehilete, Colinas de la Primavera, 45068 Zapopan, Jal.
       </p>
@@ -94,6 +94,18 @@
         📍 Ver en Google Maps
       </a>
     </div>
+
+    <!-- Temporizador Rosa -->
+    <div id="countdown" class="flex justify-center gap-4 mt-10 text-pink-700 font-bold text-3xl md:text-4xl animate__animated animate__fadeInUp animate__delay-2s">
+      <div><span id="days">00</span><span class="block text-xs font-normal text-pink-900">Días</span></div>
+      <div>:</div>
+      <div><span id="hours">00</span><span class="block text-xs font-normal text-pink-900">Horas</span></div>
+      <div>:</div>
+      <div><span id="minutes">00</span><span class="block text-xs font-normal text-pink-900">Min</span></div>
+      <div>:</div>
+      <div><span id="seconds">00</span><span class="block text-xs font-normal text-pink-900">Seg</span></div>
+    </div>
+    <!-- Fin Temporizador -->
   </main>
 
   <script>
@@ -107,6 +119,28 @@
       sparkle.style.animationDelay = Math.random() * 5 + 's';
       sparklesContainer.appendChild(sparkle);
     }
+
+    // Temporizador para el 29 de noviembre de 2025, 18:00:00
+    const countdownDate = new Date('2025-11-29T18:00:00').getTime();
+    const d = document;
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+      if (distance < 0) {
+        d.getElementById('countdown').innerHTML = '<span class="text-pink-800 script text-2xl">¡Ya comenzó la fiesta! 🎉</span>';
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      d.getElementById('days').textContent = days.toString().padStart(2, '0');
+      d.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      d.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      d.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
