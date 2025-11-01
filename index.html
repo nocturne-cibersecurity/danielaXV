@@ -38,6 +38,8 @@
       color: var(--color-text-dark);
       background-color: transparent;
       position: relative;
+      /* Sombra de texto sutil para toda la página */
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.200);
       overflow-x: hidden;
     }
 
@@ -50,7 +52,7 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      filter: blur(1px) saturate(1.1); /* Desenfoque más pronunciado */
+      filter: blur(0px) saturate(1.1); /* Desenfoque más pronunciado */
       transform: scale(1.05); /* Evita bordes duros por el blur */
     }
 
@@ -63,7 +65,8 @@
       /* Cambiamos el gradiente dorado por un color tinto sólido */
       color: var(--color-wine-red);
     }
-    h1, h2, h3 { text-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+    /* La sombra ahora se hereda del body, eliminamos la regla específica */
+    /* h1, h2, h3 { text-shadow: 0 2px 15px rgba(0,0,0,0.1); } */
     p {
       line-height: 1.7;
       color: var(--color-text-light);
