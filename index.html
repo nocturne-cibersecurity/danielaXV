@@ -314,28 +314,6 @@
     }
     
     /* --- Galería de imágenes --- */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 30px;
-    }
-    
-    .gallery-item {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      height: 200px;
-      background-color: #f5f5f5;
-      background-size: cover;
-      background-position: center;
-    }
-    
-    .gallery-item:hover {
-      transform: scale(1.05);
-    }
-    
     /* --- RSVP Form --- */
     .rsvp-form {
       background: rgba(255, 255, 255, 0.9);
@@ -544,52 +522,6 @@
         </div>
       </div>
     </section>
-    
-    <!-- Galería (placeholder) -->
-    <section class="mb-16 animate-on-scroll">
-      <div class="glass-card p-8 md:p-12 rounded-2xl">
-        <h3 class="text-4xl script title-gradient drop-shadow-md mb-6">
-          <i class="fas fa-images mr-2"></i> Nuestros Momentos
-        </h3>
-        <div class="gallery-grid">
-          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"></div>
-          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"></div>
-          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1532117182044-031e7cd916ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"></div>
-          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"></div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- RSVP -->
-    <section class="animate-on-scroll">
-      <div class="glass-card p-8 md:p-12 rounded-2xl">
-        <h3 class="text-4xl script title-gradient drop-shadow-md mb-6">
-          <i class="fas fa-envelope mr-2"></i> Confirma tu Asistencia
-        </h3>
-        <div class="rsvp-form">
-          <div class="form-group">
-            <label class="form-label" for="name">Nombre Completo</label>
-            <input type="text" id="name" class="form-input" placeholder="Tu nombre">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="email">Correo Electrónico</label>
-            <input type="email" id="email" class="form-input" placeholder="tu@email.com">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="guests">Número de Invitados</label>
-            <input type="number" id="guests" class="form-input" min="1" value="1">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="message">Mensaje (opcional)</label>
-            <textarea id="message" class="form-input" rows="3" placeholder="Tu mensaje para Daniela..."></textarea>
-          </div>
-          <button class="elegant-btn w-full mt-4" id="submitRsvp">
-            <i class="fas fa-paper-plane mr-2"></i> Confirmar Asistencia
-          </button>
-        </div>
-      </div>
-    </section>
-  </main>
 
   <!-- Control de música -->
   <button class="music-control" id="musicToggle" style="display: none;">
