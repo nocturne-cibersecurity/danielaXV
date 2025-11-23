@@ -4,40 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>XV Años - Daniela</title>
+  <meta name="description" content="Invitación a los XV Años de Daniela - 29 de noviembre de 2025">
+  
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap" as="style">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
-    @import url('https://w7.pngwing.com/pngs/298/293/png-transparent-rose-flower-flower-border-flower-arranging-flower-flowers.png');
-
     /* --- Variables de Diseño y Paleta de Colores --- */
     :root {
       --font-script: 'Great Vibes', cursive;
       --font-body: 'Cormorant Garamond', serif;
-      --color-wine-red: #8c2d41; /* Nuevo color tinto */
+      --font-modern: 'Montserrat', sans-serif;
+      --color-wine-red: #8c2d41;
+      --color-wine-dark: #6d2232;
+      --color-wine-light: #a83a51;
       --color-gold-dark: #b76e79;
       --color-gold-light: #f7c59f;
       --color-text-dark: #4a4a4a;
       --color-text-light: #6b6b6b;
       --color-bg-base: #fdf6f8;
+      --color-accent: #d4af37;
     }
 
-    /* --- Estructura Base y Fondo Difuminado --- */
+    /* --- Estructura Base y Fondo --- */
     html {
       background-color: var(--color-bg-base);
+      scroll-behavior: smooth;
     }
+    
     body {
       min-height: 100vh;
-      font-family: 'Poppins', sans-serif;
       font-family: var(--font-body);
       color: var(--color-text-dark);
       background-color: transparent;
       position: relative;
-      /* Sombra de texto sutil para toda la página */
       text-shadow: 0 2px 5px rgba(0, 0, 0, 0.200);
       overflow-x: hidden;
     }
@@ -51,21 +60,23 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      filter: blur(4px) saturate(1.1); /* Desenfoque más pronunciado */
-      transform: scale(1.05); /* Evita bordes duros por el blur */
+      filter: blur(4px) saturate(1.1);
+      transform: scale(1.05);
     }
 
     /* --- Tipografía y Estilos de Texto --- */
     .script {
-      font-family: 'Great Vibes', cursive;
       font-family: var(--font-script);
     }
+    
     .title-gradient {
-      /* Cambiamos el gradiente dorado por un color tinto sólido */
       color: var(--color-wine-red);
     }
-    /* La sombra ahora se hereda del body, eliminamos la regla específica */
-    /* h1, h2, h3 { text-shadow: 0 2px 15px rgba(0,0,0,0.1); } */
+    
+    .modern-font {
+      font-family: var(--font-modern);
+    }
+    
     p {
       line-height: 1.7;
       color: var(--color-text-light);
@@ -79,15 +90,16 @@
       background: radial-gradient(circle, rgba(255,223,150,0.9) 0%, rgba(255,255,255,0) 70%);
       border-radius: 50%;
       animation: sparkle 3s infinite;
+      pointer-events: none;
+      z-index: 1;
     }
+    
     @keyframes sparkle {
       0% { transform: scale(0) translateY(0); opacity: 1; }
       50% { transform: scale(1.5) translateY(30px); opacity: 0.5; }
       100% { transform: scale(0) translateY(0); opacity: 0; }
     }
     
-    /* Estilos para las animaciones al hacer scroll */
-
     /* --- Animaciones al Hacer Scroll --- */
     .animate-on-scroll {
       opacity: 0;
@@ -100,8 +112,6 @@
       transform: translateY(0);
     }
     
-    /* Estilos para la portada */
-
     /* --- Portada de Bienvenida --- */
     .cover-container {
       position: fixed;
@@ -110,16 +120,14 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: rgba(253, 246, 248, 0.7); /* Fondo semi-transparente para ver el background */
-      backdrop-filter: blur(5px);
+      background: rgba(253, 246, 248, 0.85);
+      backdrop-filter: blur(8px);
       background-size: cover;
       background-position: center;
       z-index: 1000;
-      /* Animación de salida: se desvanecerá lentamente */
       transition: opacity 1.5s ease-out, visibility 1.5s ease-out;
     }
     
-    /* Clase para desvanecer elementos dentro de la portada */
     .cover-element-fade-out {
       opacity: 0 !important;
       transition: opacity 0.6s ease-out;
@@ -127,12 +135,12 @@
 
     .cover-container.hidden {
       opacity: 0;
-      visibility: hidden; /* Oculta el elemento para no interferir */
+      visibility: hidden;
     }
     
     .cover-title {
       font-size: 5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       text-align: center;
     }
     
@@ -153,21 +161,65 @@
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
       box-shadow: 0 5px 15px rgba(0,0,0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .open-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+    
+    .open-btn:hover::before {
+      left: 100%;
     }
     
     .open-btn:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0,0,0, 0.3);
-      background-color: #7c2639; /* Tono ligeramente más oscuro al pasar el mouse */
+      background-color: var(--color-wine-dark);
     }
     
-
     /* --- Componentes --- */
     .glass-card {
-      background-color: rgba(255, 255, 255, 0.75);
+      background-color: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       box-shadow: 0 8px 32px 0 rgba(100, 31, 135, 0.1);
+      border-radius: 16px;
+    }
+    
+    .floral-border {
+      position: relative;
+    }
+    
+    .floral-border::before, .floral-border::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 60px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><path d="M50,25 C50,38.807 38.807,50 25,50 C11.193,50 0,38.807 0,25 C0,11.193 11.193,0 25,0 C38.807,0 50,11.193 50,25 Z" fill="none" stroke="%23d4af37" stroke-width="2"/><path d="M25,10 C30,5 35,7 40,15 C45,23 43,28 35,30 C27,32 22,27 20,20 C18,13 20,15 25,10 Z" fill="%23d4af37"/></svg>');
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0.7;
+    }
+    
+    .floral-border::before {
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .floral-border::after {
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%) rotate(180deg);
     }
 
     .music-control {
@@ -183,13 +235,186 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
       z-index: 1001;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     
     .music-control:hover {
-      background: #7c2639; /* Tono ligeramente más oscuro al pasar el mouse */
+      background: var(--color-wine-dark);
+      transform: scale(1.1);
+    }
+    
+    /* --- Contador Mejorado --- */
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      min-width: 80px;
+    }
+    
+    .countdown-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-wine-red);
+      line-height: 1;
+    }
+    
+    .countdown-label {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-top: 5px;
+    }
+    
+    /* --- Secciones con efecto parallax --- */
+    .parallax-section {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    
+    .parallax-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(253, 246, 248, 0.7);
+    }
+    
+    /* --- Botones mejorados --- */
+    .elegant-btn {
+      background: var(--color-wine-red);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .elegant-btn:hover {
+      background: var(--color-wine-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    
+    /* --- Galería de imágenes --- */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      height: 200px;
+      background-color: #f5f5f5;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    
+    /* --- RSVP Form --- */
+    .rsvp-form {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--color-text-dark);
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: var(--color-wine-red);
+      box-shadow: 0 0 0 3px rgba(140, 45, 65, 0.1);
+    }
+    
+    /* --- Responsive mejoras --- */
+    @media (max-width: 768px) {
+      .cover-title {
+        font-size: 3.5rem;
+      }
+      
+      .cover-subtitle {
+        font-size: 2.2rem;
+      }
+      
+      .open-btn {
+        padding: 12px 30px;
+        font-size: 1.2rem;
+      }
+      
+      .countdown-item {
+        min-width: 60px;
+        padding: 8px 10px;
+      }
+      
+      .countdown-number {
+        font-size: 1.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .cover-title {
+        font-size: 2.8rem;
+      }
+      
+      .cover-subtitle {
+        font-size: 1.8rem;
+      }
+      
+      .countdown-item {
+        min-width: 50px;
+        padding: 6px 8px;
+      }
+      
+      .countdown-number {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -201,87 +426,169 @@
   <div class="cover-container" id="cover">
     <h1 class="cover-title script title-gradient" id="coverTitle">Mis XV Años</h1>
     <h2 class="cover-subtitle script text-gray-800" id="coverSubtitle">Daniela</h2>
-    <button class="open-btn" id="openBtn" >
+    <button class="open-btn" id="openBtn">
       <i class="fas fa-gift mr-2"></i> Abrir Invitación
-    </button >
+    </button>
   </div>
 
   <!-- Contenido principal (oculto inicialmente) -->
-  <main class="max-w-3xl mx-auto px-6 py-12 text-center pt-10" id="mainContent" style="display: none;">
-    <p class="mt-10 text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto animate-on-scroll" style="font-family: 'Montserrat', sans-serif; font-weight: 300;">
-      Es para nosotros un honor invitar a usted y a su apreciable familia, a ser parte de esta maravillosa alegria de nuestra hija.
-    </p>
-    
-    <h1 class="text-7xl md:text-8xl script text-gray-800 mt-4 animate-on-scroll">
-      Daniela
-    </h1>
-    <h2 class="text-5xl md:text-6xl script title-gradient mt-10 animate-on-scroll">
-      Mis XV Años
-    </h2>
+  <main class="max-w-4xl mx-auto px-6 py-12 text-center pt-10" id="mainContent" style="display: none;">
+    <!-- Sección de bienvenida -->
+    <section class="mb-16 animate-on-scroll">
+      <div class="glass-card p-8 md:p-12 rounded-2xl">
+        <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto modern-font" style="font-weight: 300;">
+          Es para nosotros un honor invitar a usted y a su apreciable familia, a ser parte de esta maravillosa alegría de nuestra hija.
+        </p>
+        
+        <h1 class="text-7xl md:text-8xl script text-gray-800 mt-8 mb-4">
+          Daniela
+        </h1>
+        <h2 class="text-5xl md:text-6xl script title-gradient mt-6 mb-10">
+          Mis XV Años
+        </h2>
 
-    <p class="mt-10 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto animate-on-scroll" style="font-family: 'Montserrat', sans-serif; font-weight: 300;">
-      Con la bendición de Dios y el amor de:
-    </p>
+        <p class="mt-8 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto modern-font" style="font-weight: 300;">
+          Con la bendición de Dios y el amor de:
+        </p>
+      </div>
+    </section>
 
-    <div class="mt-12 animate-on-scroll">
-      <h3 class="text-4xl script title-gradient drop-shadow-md mb-3">
-        <i class="family"></i> Mis Padres:
-      </h3>
-      <p class="text-gray-800 italic text-2xl drop-shadow-sm">
-        Gabriela Pizarro & Guillermo Lopez
-      </p>
-      <h3 class="text-4xl script title-gradient drop-shadow-md mt-8 mb-3">
-        <i class="family"></i> Mis Padrinos:
-      </h3>
-      <p class="text-gray-800 italic text-2xl drop-shadow-sm">
-        Emilia Reyes & Manuel Pizarro
-      </p>
-      <span class="block title-gradient font-semibold text-2xl md:text-3xl mt-8 mb-2 drop-shadow-sm">
-        Sábado 29 de noviembre del 2025
-      </span>
-      <p class="text-gray-800 italic text-2xl drop-shadow-sm">
-        Te esperamos en:
-      </p>
-
-      <h3 class="text-4xl script title-gradient drop-shadow-md mt-12 mb-3">
-        <i class="fas fa-church"></i> Parroquia Santos Martires
-      </h3>
-
-      <p class="mt-3 text-gray-800 text-xl font-bold drop-shadow-sm">
-        ⏰ Hora: 6:00 PM
-      </p>
-      <a href="https://www.google.com/maps/place/Colorines+29,+La+Floresta+del+Colli,+Colinas+de+la+Primavera,+45066+Zapopan,+Jal./" target="_blank"
-        class="mt-4 inline-block bg-gradient-to-r from-red-800 to-red-600 text-white px-6 py-2 rounded-full shadow-lg hover:scale-105 transition-transform duration-300 animate-on-scroll">
-        📍 Ver en Google Maps
-      </a>
-
-      <h3 class="text-4xl script title-gradient drop-shadow-md mt-10 mb-3 animate-on-scroll">
-        <i class="fas fa-champagne-glasses"></i> Terraza
-      </h3>
-      <p class="mt-3 text-gray-800 text-xl font-bold drop-shadow-sm animate-on-scroll">
-        ⏰ Hora: 8:00 PM
-      </p>
-      <a href="https://www.google.com/maps/place/Obreros+Unificados+47c,+El+Rehilete,+Colinas+de+la+Primavera,+45068+Zapopan,+Jal./" target="_blank"
-        class="mt-4 inline-block bg-gradient-to-r from-red-800 to-red-600 text-white px-6 py-2 rounded-full shadow-lg hover:scale-105 transition-transform duration-300 animate-on-scroll">
-        <i class="fas fa-confetti"></i> Ver en Google Maps
-      </a>
-    </div>
-    
-    <!-- Temporizador -->
-    <div class="flex flex-col items-center mt-12 animate-on-scroll">
-      <div class="py-6">
-        <span class="title-gradient font-bold text-2xl md:text-3xl mb-3 block drop-shadow-sm">Faltan</span>
-        <div id="countdown" class="flex justify-center gap-4 md:gap-6 text-gray-800 font-bold text-5xl md:text-6xl drop-shadow-sm">
-          <div><span id="days" class="title-gradient">00</span><span class="block text-sm font-normal text-gray-700">Días</span></div>
-          <div class="text-gray-600">:</div>
-          <div><span id="hours" class="title-gradient">00</span><span class="block text-sm font-normal text-gray-700">Horas</span></div>
-          <div class="text-gray-600">:</div>
-          <div><span id="minutes" class="title-gradient">00</span><span class="block text-sm font-normal text-gray-700">Min</span></div>
-          <div class="text-gray-600">:</div>
-          <div><span id="seconds" class="title-gradient">00</span><span class="block text-sm font-normal text-gray-700">Seg</span></div>
+    <!-- Sección de familia -->
+    <section class="mb-16 animate-on-scroll">
+      <div class="glass-card p-8 md:p-12 rounded-2xl floral-border">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-4xl script title-gradient drop-shadow-md mb-4">
+              <i class="fas fa-heart mr-2"></i> Mis Padres
+            </h3>
+            <p class="text-gray-800 italic text-2xl drop-shadow-sm">
+              Gabriela Pizarro &<br>Guillermo Lopez
+            </p>
+          </div>
+          
+          <div>
+            <h3 class="text-4xl script title-gradient drop-shadow-md mb-4">
+              <i class="fas fa-star mr-2"></i> Mis Padrinos
+            </h3>
+            <p class="text-gray-800 italic text-2xl drop-shadow-sm">
+              Emilia Reyes &<br>Manuel Pizarro
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Sección de fecha y lugar -->
+    <section class="mb-16 animate-on-scroll">
+      <div class="glass-card p-8 md:p-12 rounded-2xl">
+        <span class="block title-gradient font-semibold text-2xl md:text-3xl mb-8 drop-shadow-sm">
+          Sábado 29 de noviembre del 2025
+        </span>
+        <p class="text-gray-800 italic text-2xl drop-shadow-sm mb-10">
+          Te esperamos en:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Ceremonia -->
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <h3 class="text-3xl script title-gradient drop-shadow-md mb-4">
+              <i class="fas fa-church mr-2"></i> Parroquia Santos Martires
+            </h3>
+            <p class="mt-3 text-gray-800 text-xl font-bold drop-shadow-sm mb-2">
+              ⏰ Hora: 6:00 PM
+            </p>
+            <a href="https://www.google.com/maps/place/Colorines+29,+La+Floresta+del+Colli,+Colinas+de+la+Primavera,+45066+Zapopan,+Jal./" target="_blank"
+              class="elegant-btn mt-4">
+              <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
+            </a>
+          </div>
+          
+          <!-- Recepción -->
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <h3 class="text-3xl script title-gradient drop-shadow-md mb-4">
+              <i class="fas fa-champagne-glasses mr-2"></i> Terraza
+            </h3>
+            <p class="mt-3 text-gray-800 text-xl font-bold drop-shadow-sm mb-2">
+              ⏰ Hora: 8:00 PM
+            </p>
+            <a href="https://www.google.com/maps/place/Obreros+Unificados+47c,+El+Rehilete,+Colinas+de+la+Primavera,+45068+Zapopan,+Jal./" target="_blank"
+              class="elegant-btn mt-4">
+              <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Temporizador -->
+    <section class="mb-16 animate-on-scroll">
+      <div class="glass-card p-8 md:p-12 rounded-2xl">
+        <span class="title-gradient font-bold text-2xl md:text-3xl mb-6 block drop-shadow-sm">Faltan</span>
+        <div id="countdown" class="flex justify-center gap-4 md:gap-6">
+          <div class="countdown-item">
+            <span id="days" class="countdown-number">00</span>
+            <span class="countdown-label">Días</span>
+          </div>
+          <div class="countdown-item">
+            <span id="hours" class="countdown-number">00</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <div class="countdown-item">
+            <span id="minutes" class="countdown-number">00</span>
+            <span class="countdown-label">Minutos</span>
+          </div>
+          <div class="countdown-item">
+            <span id="seconds" class="countdown-number">00</span>
+            <span class="countdown-label">Segundos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Galería (placeholder) -->
+    <section class="mb-16 animate-on-scroll">
+      <div class="glass-card p-8 md:p-12 rounded-2xl">
+        <h3 class="text-4xl script title-gradient drop-shadow-md mb-6">
+          <i class="fas fa-images mr-2"></i> Nuestros Momentos
+        </h3>
+        <div class="gallery-grid">
+          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"></div>
+          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"></div>
+          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1532117182044-031e7cd916ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"></div>
+          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')"></div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- RSVP -->
+    <section class="animate-on-scroll">
+      <div class="glass-card p-8 md:p-12 rounded-2xl">
+        <h3 class="text-4xl script title-gradient drop-shadow-md mb-6">
+          <i class="fas fa-envelope mr-2"></i> Confirma tu Asistencia
+        </h3>
+        <div class="rsvp-form">
+          <div class="form-group">
+            <label class="form-label" for="name">Nombre Completo</label>
+            <input type="text" id="name" class="form-input" placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Correo Electrónico</label>
+            <input type="email" id="email" class="form-input" placeholder="tu@email.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="guests">Número de Invitados</label>
+            <input type="number" id="guests" class="form-input" min="1" value="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Mensaje (opcional)</label>
+            <textarea id="message" class="form-input" rows="3" placeholder="Tu mensaje para Daniela..."></textarea>
+          </div>
+          <button class="elegant-btn w-full mt-4" id="submitRsvp">
+            <i class="fas fa-paper-plane mr-2"></i> Confirmar Asistencia
+          </button>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Control de música -->
@@ -291,7 +598,7 @@
 
   <!-- Elemento de audio para la música -->
   <audio id="backgroundMusic" loop>
-    <source src="Francois Klark - Always Feel The Beat' ft. Sofia Carson (Official Acoustic Video)(1).mp3" type="audio/mp3">
+    <source src="/music/Francois Klark - Always Feel The Beat' ft. Sofia Carson (Official Acoustic Video)(1).mp3" type="audio/mp3">
     Tu navegador no soporta el elemento de audio.
   </audio>
 
@@ -342,6 +649,7 @@
       const mainContent = document.getElementById('mainContent');
       const musicToggle = document.getElementById('musicToggle');
       const backgroundMusic = document.getElementById('backgroundMusic');
+      const submitRsvp = document.getElementById('submitRsvp');
       let isMusicPlaying = false;
       
       // Abrir invitación
@@ -354,7 +662,7 @@
         // 2. Después de un momento, desvanecer el contenedor de la portada
         setTimeout(function() {
           cover.classList.add('hidden');
-        }, 500); // Inicia el desvanecimiento del fondo un poco después
+        }, 500);
         
         // 3. Mostrar contenido principal después de que la animación de la portada haya comenzado
         setTimeout(function() {
@@ -371,7 +679,7 @@
           }).catch(error => {
             console.log("La reproducción automática fue bloqueada:", error);
           });
-        }, 1000); // Aumentamos el retraso para que coincida con la animación
+        }, 1000);
       });
       
       // Control de música
@@ -384,6 +692,29 @@
           musicToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
         }
         isMusicPlaying = !isMusicPlaying;
+      });
+      
+      // RSVP Form
+      submitRsvp.addEventListener('click', function() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const guests = document.getElementById('guests').value;
+        const message = document.getElementById('message').value;
+        
+        if (!name || !email) {
+          alert('Por favor, completa al menos tu nombre y correo electrónico.');
+          return;
+        }
+        
+        // Aquí normalmente enviarías los datos a un servidor
+        // Por ahora, solo mostraremos una confirmación
+        alert(`¡Gracias ${name}! Tu confirmación ha sido recibida. Esperamos verte en la celebración.`);
+        
+        // Limpiar formulario
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('guests').value = '1';
+        document.getElementById('message').value = '';
       });
       
       // Inicializar animaciones de scroll
